@@ -7,3 +7,15 @@ Each line should be something you can easily translate into code.
 For help with writing pseudocode, take a look at this [pseudocode standard](http://users.csc.calpoly.edu/~jdalbey/SWE/pdl_std.html) example.
 
 *NOTE: Make sure your pseudocode is broken down to easily implementable steps.*
+
+create method total with one argument
+create variable sum = 0
+for every index in array
+add to sum
+
+create method sentence_maker with one argument
+create variable sentence = 0
+for each object in array
+join to sentence
+add sentence to "."
+capitalize first letter in sentence
