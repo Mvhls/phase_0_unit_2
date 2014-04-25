@@ -1,7 +1,7 @@
 # U2.W4: Cipher Challenge
 
 
-# I worked on this challenge with: .
+# I worked on this challenge with: Zach Plfederer
 
 
 
@@ -72,11 +72,52 @@ def north_korean_cipher(coded_message)
 end
 
 # Your Refactored Solution
+def north_korean_cipher(coded_message)
 
+# Create array to store our result
+  decoded_sentence = []           
+# Create array of the alphabet to build our cipher
+  alphabet = ("a".."z").to_a
+# Create empty hash to serve as our cipher
+  cipher = {}
 
+# Populate cipher hash with letters of the alphabet, offset by four (i.e 'e' => 'a')
+  (0..25).each { |x| cipher[(alphabet[x - 22])] = alphabet[x] }
 
+# Create an array of individual characters from our argument, and run the following block of code on each character (a variable name of 'input' is given to each character)
+  coded_message.downcase.split("").each do |input|
+# Create found_match variable, set to false
+    found_match = false
+# For each cipher key, check against the input variable
+    cipher.each_key do |key| 
 
-
+# For alphabetical characters, use the input to access the cipher value whose key is equal to the input
+      if input == key
+        decoded_sentence.push cipher[key]
+        found_match = true
+        break  
+# Deciphers the symbols in array into spaces
+      elsif ["@", "#", "$", "%", "^", "&", "*"].any? {|x| x == input} 
+        decoded_sentence.push " "
+        found_match = true
+        break
+# Pushes numbers into decoded sentence as is
+      elsif (0..9).to_a.include?(input)  
+        decoded_sentence.push input
+        found_match = true
+        break
+      end
+    end
+# Pushes symbols from input into decoded sentence if found_match is false    
+      decoded_sentence.push input if not found_match 
+end
+# Turns array into one string
+  decoded_sentence = decoded_sentence.join("")  
+# Divides multi digit numbers 
+  decoded_sentence.gsub!(/\d+/) { |num| num.to_i / 100 } if decoded_sentence.match(/\d+/)  
+  
+  return decoded_sentence
+end
 # Driver Code:
 p north_korean_cipher("m^aerx%e&gsoi!") == "i want a coke!" #This is driver code and should print true
 # Find out what Kim Jong Un is saying below and turn it into driver code as well. Driver Code statements should always return "true"
