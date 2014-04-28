@@ -35,17 +35,31 @@ end
 
 # Person 3
 def my_array_sorting_method(source)
-  # Your code here!
+   bar = source.partition{|x| x.is_a? Integer}
+   return bar[0].sort + bar[1].sort
 end
 
 def my_hash_sorting_method(source)
-  # Your code here!
+	bar = source.sort_by {|key, value| key}
+	return bar.sort_by {|key, value| value}
 end
 
 # Identify and describe the ruby method you implemented. 
-# 
-#
-#
+=begin
+Sort is a built in ruby method that sorts numbers smallest
+to largest, and aplabetically by letters. In order to sort
+largest to smallest, the sort_by method will sort in whatever
+order you describe it to in the block of code. In the case of
+the hash, the hash is chosen to be sorted by the value, which is
+by age in the example given, but first sorted alphabetically
+by key.
+
+Partition is a method that separates objects into two arrays
+based on a true or false expression. I used it in this case 
+to separate numbers by strings. Since it created two arrays 
+within the array, I then concatenated them into one array 
+after sorting, with numbers first.
+=end
 
 
 # Person 4
