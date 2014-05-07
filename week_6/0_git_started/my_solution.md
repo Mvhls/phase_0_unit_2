@@ -59,5 +59,8 @@ shows the status of added and working files in your repo
 - enter user name (if on powershell)
 - enter password (if on powershell)
 
+#### If you accidently committed changes on github and are ahead of the origin on master branch
+- git reset --hard origin/master (to reset it to whatever the origin was at)
+
 ## Release 5: Reflection
 I felt like I had to relearn everything I knew about git. The github app and git are vastly different. Everything I have learned about git so far was graphic, where using it from the command line is not. I am in the process of making a practice git file to solidify my ideas. I am afraid if I start adding to my repos on github through the command line, I will be lost if I make a mistake. Is this a good idea? We will find out. 
