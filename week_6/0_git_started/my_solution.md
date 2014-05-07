@@ -45,8 +45,15 @@ shows the status of added and working files in your repo
 ## Release 4: Git Workflow
 
 - Push files to a remote repository
+	git add origin (origin url)
+	git push origin master
 - Fetch changes
+	git add upstream (upstream url)
+	git fetch upstream
 - Commit locally
-
+	git add file
+	git commit -m "description of commit"
+	enter user name (if on powershell)
+	enter password (if on powershell)
 ## Release 5: Reflection
 I felt like I had to relearn everything I knew about git. The github app and git are vastly different. Everything I have learned about git so far was graphic, where using it from the command line is not. I am in the process of making a practice git file to solidify my ideas. I am afraid if I start adding to my repos on github through the command line, I will be lost if I make a mistake. Is this a good idea? We will find out. 
