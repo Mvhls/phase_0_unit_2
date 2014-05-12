@@ -16,48 +16,6 @@ class Song
 	end
 
 	def play
-		"Playing song #{@track} by #{@artist}."
-	end
-end
-
-class Playlist
-	def initialize(*playlist)
-		@playlist = playlist
-	end
-
-	def add(*tracks)
-		tracks.each {|track| @playlist << track}
-	end
-
-	def num_of_tracks
-		@playlist.count
-	end
-
-	def remove(song)
-		@playlist.delete(song)
-	end
-
-	def includes?(song)
-		@playlist.include?(song)
-	end
-
-	def play_all
-	end
-
-	def display
-		puts "#{@playlist.inspect}"
-	end
-end
-
-# Refactored Solution
-
-class Song
-	def initialize(track, artist)
-		@track = track
-		@artist = artist
-	end
-
-	def play
 		puts "Playing song #{@track} by #{@artist}."
 	end
 end
@@ -91,8 +49,7 @@ class Playlist
 		puts "#{@playlist.inspect}"
 	end
 end
-
-
+# Refactored Solution
 
 
 
